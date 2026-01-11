@@ -16,7 +16,7 @@
 
 Results-driven **Quality Assurance Engineer** with expertise in building robust test automation frameworks and ensuring software quality across enterprise systems. Passionate about **data-driven decisions**, **BFSI/fintech solutions**, and delivering reliable, scalable products.
 
-- 🔭 Currently working on **DLT-based healthcare workforce management systems**
+- 🔭 Currently working on **Upskilling in Playwright & Cypress**
 - 🌱 Specializing in **Selenium, Cypress, API Testing, CI/CD Pipelines**
 - 💡 Interested in **Banking Systems, Data Analytics, and Test Architecture**
 - 📫 Reach me at: **bhumika.gohiya@gmail.com**
@@ -77,10 +77,7 @@ Enterprise-grade automation framework with parallel execution and comprehensive 
 
 ## 🏆 Certifications & Achievements
 
-- 🥇 **ISTQB Certified Tester**
-- 🥇 **AWS Cloud Practitioner**
-- 🏅 **Best QA Performer Award**
-- 📜 **Agile/Scrum Certification**
+- 🥇 **Microsoft Azure Fundamentals (AZ-900)**
 
 ---
 
