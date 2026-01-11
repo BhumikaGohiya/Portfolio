@@ -1,6 +1,41 @@
-import { Mail, MapPin, ArrowUpRight, Phone, Sparkles, MessageCircle, Linkedin, Github } from "lucide-react";
+import { Mail, MapPin, ArrowUpRight, Phone, Sparkles, MessageCircle, Linkedin, Github, CheckCircle } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validate required fields
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      toast.error("Please fill in all required fields");
+      return;
+    }
+
+    // Create mailto link with form data
+    const subject = encodeURIComponent(formData.subject || "Portfolio Contact");
+    const body = encodeURIComponent(
+      `Hi Bhumika,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    
+    window.location.href = `mailto:bhumikagohiya96@gmail.com?subject=${subject}&body=${body}`;
+    
+    toast.success("Opening your email client...", {
+      icon: <CheckCircle className="text-emerald-500" size={18} />,
+    });
+  };
+
   return (
     <section id="contact" className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-gradient-to-br from-violet-600 via-purple-600 to-cyan-500 relative overflow-hidden">
       {/* Decorative elements */}
@@ -111,26 +146,30 @@ const Contact = () => {
                 </div>
               </div>
 
-              <form className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2 text-slate-700">
-                      Your name
+                      Your name *
                     </label>
                     <input
                       type="text"
                       id="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 bg-slate-50 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 focus:bg-white outline-none transition-all text-slate-900 placeholder:text-slate-400"
                       placeholder="John Doe"
                     />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-2 text-slate-700">
-                      Email address
+                      Email address *
                     </label>
                     <input
                       type="email"
                       id="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 bg-slate-50 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 focus:bg-white outline-none transition-all text-slate-900 placeholder:text-slate-400"
                       placeholder="john@company.com"
                     />
@@ -143,17 +182,21 @@ const Contact = () => {
                   <input
                     type="text"
                     id="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 bg-slate-50 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 focus:bg-white outline-none transition-all text-slate-900 placeholder:text-slate-400"
                     placeholder="QA Automation Opportunity"
                   />
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2 text-slate-700">
-                    Your message
+                    Your message *
                   </label>
                   <textarea
                     id="message"
                     rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 bg-slate-50 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 focus:bg-white outline-none transition-all resize-none text-slate-900 placeholder:text-slate-400"
                     placeholder="Tell me about your project, challenges, or how I can help..."
                   />
