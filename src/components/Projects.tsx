@@ -4,8 +4,8 @@ const Projects = () => {
   const projects = [
     {
       title: "AI Art Sentiment Analysis",
-      description: "Analyzing YouTube comments to understand public perceptions of AI-generated art using NLP and sentiment analysis techniques.",
-      longDescription: "Built a comprehensive sentiment analysis pipeline to analyze thousands of YouTube comments, extracting insights about how people perceive AI-generated artwork. Implemented text preprocessing, sentiment classification, and data visualization.",
+      description: "Master's capstone project analyzing public perception of AI-generated art through YouTube comments.",
+      longDescription: "Developed as part of my Master of Engineering in Technology Innovation Management (Data Analytics concentration) at Carleton University. Built a comprehensive sentiment analysis pipeline to analyze thousands of YouTube comments, extracting insights about how people perceive AI-generated artwork using NLP techniques and data visualization.",
       technologies: ["Python", "NLP", "Sentiment Analysis", "YouTube API", "Data Visualization"],
       icon: Brain,
       color: "from-violet-500 to-purple-600",
