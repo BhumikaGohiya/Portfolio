@@ -2,10 +2,10 @@ import { Briefcase, TestTube, Smartphone, Server, Settings, Workflow, CheckCircl
 
 const GetToKnowMe = () => {
   const stats = [
-    { value: "5+", label: "Years Experience" },
-    { value: "500+", label: "Test Cases Automated" },
-    { value: "40%", label: "Effort Reduction" },
-    { value: "98%", label: "Defect Closure Rate" },
+    { value: "4+", label: "Years Experience", gradient: "from-violet-500 to-purple-600" },
+    { value: "500+", label: "Test Cases Automated", gradient: "from-cyan-500 to-blue-600" },
+    { value: "40%", label: "Effort Reduction", gradient: "from-emerald-500 to-teal-600" },
+    { value: "98%", label: "Defect Closure Rate", gradient: "from-amber-500 to-orange-600" },
   ];
 
   const expertiseAreas = [
@@ -13,37 +13,49 @@ const GetToKnowMe = () => {
       icon: TestTube,
       title: "UI Test Automation",
       description: "End-to-end web automation using Selenium, Playwright, and TestNG frameworks",
-      skills: ["Selenium WebDriver", "Playwright", "TestNG", "Page Object Model"],
+      skills: ["Selenium WebDriver", "Playwright", "TestNG"],
+      color: "from-violet-500 to-purple-600",
+      bgColor: "bg-violet-50",
     },
     {
       icon: Server,
       title: "API Testing & Automation",
       description: "RESTful API validation with comprehensive contract and integration testing",
       skills: ["Rest Assured", "Postman", "API Contract Testing"],
+      color: "from-cyan-500 to-blue-600",
+      bgColor: "bg-cyan-50",
     },
     {
       icon: Smartphone,
       title: "Mobile Testing",
       description: "Native and hybrid mobile app testing across Android and iOS platforms",
       skills: ["Appium", "Android Testing", "iOS Testing"],
+      color: "from-emerald-500 to-teal-600",
+      bgColor: "bg-emerald-50",
     },
     {
       icon: Workflow,
       title: "CI/CD Integration",
       description: "Seamless pipeline integration for continuous testing and deployment",
       skills: ["Jenkins", "Azure DevOps", "Git Workflows"],
+      color: "from-amber-500 to-orange-600",
+      bgColor: "bg-amber-50",
     },
     {
       icon: Layers,
       title: "BDD Frameworks",
       description: "Behavior-driven development with clear, stakeholder-readable test scenarios",
       skills: ["Cucumber", "Gherkin", "Feature Files"],
+      color: "from-rose-500 to-pink-600",
+      bgColor: "bg-rose-50",
     },
     {
       icon: Bug,
       title: "Defect Management",
       description: "End-to-end defect lifecycle management and quality reporting",
       skills: ["JIRA", "Test Reporting", "Root Cause Analysis"],
+      color: "from-indigo-500 to-violet-600",
+      bgColor: "bg-indigo-50",
     },
   ];
 
@@ -89,43 +101,44 @@ const GetToKnowMe = () => {
             What I Bring to the Table
           </h2>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-            5+ years of building robust automation frameworks that transform QA from a bottleneck into a competitive advantage
+            4+ years of building robust automation frameworks that transform QA from a bottleneck into a competitive advantage
           </p>
         </div>
 
-        {/* Stats Row */}
+        {/* Stats Row - Unique Gradient Cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="p-6 bg-white rounded-2xl border border-slate-100 text-center hover:shadow-lg hover:border-violet-100 transition-all"
+              className="group relative p-6 bg-white rounded-2xl border border-slate-100 text-center overflow-hidden hover:shadow-xl transition-all duration-300"
             >
-              <p className="font-display text-3xl md:text-4xl font-bold bg-gradient-to-r from-violet-600 to-cyan-600 bg-clip-text text-transparent">
+              <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+              <p className={`font-display text-3xl md:text-4xl font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}>
                 {stat.value}
               </p>
-              <p className="text-slate-500 text-sm mt-1">{stat.label}</p>
+              <p className="text-slate-500 text-sm mt-1 font-medium">{stat.label}</p>
             </div>
           ))}
         </div>
 
-        {/* Expertise Grid */}
+        {/* Expertise Grid - Colorful Unique Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {expertiseAreas.map((area, index) => (
             <div
               key={index}
-              className="group p-6 bg-white rounded-2xl border border-slate-100 hover:shadow-xl hover:border-violet-200 transition-all duration-300"
+              className={`group relative p-6 ${area.bgColor} rounded-2xl border border-transparent hover:shadow-2xl transition-all duration-300 overflow-hidden`}
             >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${area.color} opacity-10 rounded-bl-full`} />
+              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${area.color} flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}>
                 <area.icon size={24} className="text-white" />
               </div>
               <h3 className="font-display text-xl font-bold text-slate-900 mb-2">{area.title}</h3>
-              <p className="text-slate-500 text-sm mb-4 leading-relaxed">{area.description}</p>
-              <div className="space-y-2">
+              <p className="text-slate-600 text-sm mb-4 leading-relaxed">{area.description}</p>
+              <div className="flex flex-wrap gap-2">
                 {area.skills.map((skill, i) => (
-                  <div key={i} className="flex items-center gap-2 text-sm text-slate-600">
-                    <CheckCircle2 size={16} className="text-emerald-500" />
-                    <span>{skill}</span>
-                  </div>
+                  <span key={i} className="px-3 py-1 bg-white/80 backdrop-blur-sm rounded-full text-xs font-medium text-slate-700 shadow-sm">
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>
