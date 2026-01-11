@@ -31,7 +31,7 @@ const Projects = () => {
             Projects
           </h2>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-            Side projects and explorations beyond automation — applying technical skills to solve interesting problems
+            Academic projects from my Master's in Technology Innovation Management, applying data analytics to real-world challenges
           </p>
         </div>
 
