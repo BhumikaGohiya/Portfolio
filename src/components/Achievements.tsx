@@ -48,145 +48,111 @@ const Achievements = () => {
     { name: "ISTQB – Foundation Level", year: "In Progress" },
   ];
 
-  const volunteering = [
-    {
-      title: "Communications Head & Secretary",
-      organization: "Ottawa Centre Youth Council",
-      period: "Apr 2023 - Sep 2024",
-      duration: "1 yr 6 mos",
-      category: "Social Services",
-      achievements: [
-        "Led communications and operations for the Ottawa Centre Youth Council, planning and executing community events and youth-focused initiatives.",
-        "Coordinated with campus groups and local partners to manage event logistics, stakeholder engagement, and risk considerations.",
-        "Managed the council's social media presence, improving outreach, visibility, and community engagement.",
-      ],
-    },
-  ];
+  const volunteering = {
+    title: "Communications Head & Secretary",
+    organization: "Ottawa Centre Youth Council",
+    period: "Apr 2023 - Sep 2024",
+    category: "Social Services",
+  };
 
   return (
-    <section id="achievements" className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-gradient-to-br from-violet-50 via-white to-cyan-50">
+    <section id="achievements" className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-slate-50">
       <div className="max-w-7xl mx-auto">
+        {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-violet-500 to-cyan-500 text-white text-sm font-medium rounded-full mb-4">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-slate-900 mb-3">
             Credentials & Recognition
-          </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-slate-900">
-            My Journey So Far
           </h2>
+          <p className="text-slate-500">Academic foundation and professional achievements</p>
         </div>
 
-        {/* Education - Horizontal Cards */}
-        <div className="mb-12">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-lg shadow-violet-200">
-              <GraduationCap size={20} className="text-white" />
+        {/* Main 3-column grid */}
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {/* Education Column */}
+          <div>
+            <div className="flex items-center gap-2 mb-5">
+              <GraduationCap size={20} className="text-violet-500" />
+              <h3 className="font-display text-lg font-bold text-slate-900">Education</h3>
             </div>
-            <h3 className="font-display text-2xl font-bold text-slate-900">Education</h3>
-          </div>
-          <div className="grid md:grid-cols-2 gap-4">
-            {education.map((edu, index) => (
-              <div
-                key={index}
-                className="group relative p-6 bg-white rounded-2xl border border-slate-100 hover:shadow-xl hover:shadow-violet-100/50 transition-all duration-300 overflow-hidden"
-              >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-violet-100 to-transparent rounded-bl-full opacity-50" />
-                <div className="relative">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="px-3 py-1 bg-violet-100 text-violet-700 text-xs font-semibold rounded-full">{edu.year}</span>
-                  </div>
-                  <h4 className="font-display text-lg font-bold text-slate-900 mb-1">{edu.degree}</h4>
-                  <p className="text-violet-600 font-medium text-sm mb-1">{edu.field}</p>
-                  <p className="text-slate-500 text-sm">{edu.school}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Awards - Compact Grid */}
-        <div className="mb-12">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-lg shadow-amber-200">
-              <Trophy size={20} className="text-white" />
-            </div>
-            <h3 className="font-display text-2xl font-bold text-slate-900">Awards & Recognition</h3>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {awards.map((award, index) => {
-              const IconComponent = award.icon;
-              return (
+            <div className="space-y-3">
+              {education.map((edu, index) => (
                 <div
                   key={index}
-                  className="group flex items-center gap-4 p-4 bg-white rounded-xl border border-slate-100 hover:border-amber-200 hover:shadow-lg hover:shadow-amber-50 transition-all duration-300"
+                  className="p-4 bg-white rounded-xl border border-slate-100 hover:shadow-md transition-shadow"
                 >
-                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center group-hover:from-amber-200 group-hover:to-orange-200 transition-colors">
-                    <IconComponent size={20} className="text-amber-600" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h4 className="font-semibold text-slate-900 text-sm truncate">{award.title}</h4>
-                    <p className="text-xs text-slate-500">{award.organization} · {award.year}</p>
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <h4 className="font-semibold text-slate-900 text-sm">{edu.degree}</h4>
+                      <p className="text-slate-500 text-xs mt-0.5">{edu.school}</p>
+                    </div>
+                    <span className="text-violet-500 font-semibold text-sm shrink-0">{edu.year}</span>
                   </div>
                 </div>
-              );
-            })}
+              ))}
+            </div>
+          </div>
+
+          {/* Awards Column */}
+          <div>
+            <div className="flex items-center gap-2 mb-5">
+              <Trophy size={20} className="text-amber-500" />
+              <h3 className="font-display text-lg font-bold text-slate-900">Awards</h3>
+            </div>
+            <div className="space-y-3">
+              {awards.map((award, index) => {
+                const IconComponent = award.icon;
+                return (
+                  <div
+                    key={index}
+                    className="flex items-start gap-3 p-4 bg-white rounded-xl border border-slate-100 hover:shadow-md transition-shadow"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center shrink-0">
+                      <IconComponent size={16} className="text-amber-500" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 text-sm">{award.title}</h4>
+                      <p className="text-amber-600 text-xs mt-0.5">{award.organization}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Certifications Column */}
+          <div>
+            <div className="flex items-center gap-2 mb-5">
+              <BadgeCheck size={20} className="text-emerald-500" />
+              <h3 className="font-display text-lg font-bold text-slate-900">Certifications</h3>
+            </div>
+            <div className="space-y-3">
+              {certifications.map((cert, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-3 p-4 bg-white rounded-xl border border-slate-100 hover:shadow-md transition-shadow"
+                >
+                  <div className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                  <span className="font-medium text-slate-800 text-sm">{cert.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Certifications - Inline Style */}
-        {/* Certifications */}
-        <div className="mb-12">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-200">
-              <BadgeCheck size={20} className="text-white" />
-            </div>
-            <h3 className="font-display text-2xl font-bold text-slate-900">Certifications</h3>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {certifications.map((cert, index) => (
-              <div
-                key={index}
-                className="inline-flex items-center gap-3 px-5 py-3 bg-white rounded-full border border-slate-100 hover:border-emerald-200 hover:shadow-lg hover:shadow-emerald-50 transition-all duration-300"
-              >
-                <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500" />
-                <span className="font-medium text-slate-800 text-sm">{cert.name}</span>
-                <span className="text-xs text-slate-400 font-medium">{cert.year}</span>
-              </div>
-            ))}
-          </div>
+        {/* Volunteering - Compact Card */}
+        <div className="flex items-center gap-2 mb-5">
+          <Heart size={20} className="text-rose-500" />
+          <h3 className="font-display text-lg font-bold text-slate-900">Volunteering</h3>
         </div>
-
-        {/* Volunteering */}
-        <div>
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center shadow-lg shadow-rose-200">
-              <Heart size={20} className="text-white" />
-            </div>
-            <h3 className="font-display text-2xl font-bold text-slate-900">Volunteering</h3>
+        <div className="flex items-center gap-4 p-4 bg-white rounded-xl border border-slate-100 hover:shadow-md transition-shadow max-w-xl">
+          <div className="w-10 h-10 rounded-lg bg-rose-50 flex items-center justify-center shrink-0">
+            <Heart size={18} className="text-rose-500" />
           </div>
-          {volunteering.map((vol, index) => (
-            <div
-              key={index}
-              className="group relative p-6 bg-white rounded-2xl border border-slate-100 hover:shadow-xl hover:shadow-rose-100/50 transition-all duration-300 overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-rose-50 to-transparent rounded-bl-full opacity-50" />
-              <div className="relative">
-                <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="px-3 py-1 bg-rose-100 text-rose-700 text-xs font-semibold rounded-full">{vol.period}</span>
-                  <span className="px-3 py-1 bg-pink-50 text-pink-600 text-xs font-medium rounded-full">{vol.category}</span>
-                </div>
-                <h4 className="font-display text-lg font-bold text-slate-900 mb-1">{vol.title}</h4>
-                <p className="text-rose-600 font-medium text-sm mb-4">{vol.organization}</p>
-                <ul className="space-y-2">
-                  {vol.achievements.map((achievement, achIndex) => (
-                    <li key={achIndex} className="flex items-start gap-2 text-sm text-slate-600">
-                      <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-rose-400 to-pink-500 mt-2 flex-shrink-0" />
-                      <span>{achievement}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
+          <div>
+            <h4 className="font-semibold text-slate-900 text-sm">{volunteering.title}</h4>
+            <p className="text-rose-600 text-xs">{volunteering.organization}</p>
+            <p className="text-slate-400 text-xs mt-0.5">{volunteering.period} · {volunteering.category}</p>
+          </div>
         </div>
       </div>
     </section>
