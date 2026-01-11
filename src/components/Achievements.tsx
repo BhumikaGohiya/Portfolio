@@ -1,4 +1,4 @@
-import { GraduationCap, Trophy, Star, TrendingUp, Users, BadgeCheck } from "lucide-react";
+import { GraduationCap, Trophy, Star, TrendingUp, Users, BadgeCheck, Heart } from "lucide-react";
 
 const Achievements = () => {
   const awards = [
@@ -46,6 +46,21 @@ const Achievements = () => {
   const certifications = [
     { name: "Microsoft Azure Fundamentals (AZ-900)", year: "2020" },
     { name: "ISTQB – Foundation Level", year: "In Progress" },
+  ];
+
+  const volunteering = [
+    {
+      title: "Communications Head & Secretary",
+      organization: "Ottawa Centre Youth Council",
+      period: "Apr 2023 - Sep 2024",
+      duration: "1 yr 6 mos",
+      category: "Social Services",
+      achievements: [
+        "Led communications and operations for the Ottawa Centre Youth Council, planning and executing community events and youth-focused initiatives.",
+        "Coordinated with campus groups and local partners to manage event logistics, stakeholder engagement, and risk considerations.",
+        "Managed the council's social media presence, improving outreach, visibility, and community engagement.",
+      ],
+    },
   ];
 
   return (
@@ -118,7 +133,8 @@ const Achievements = () => {
         </div>
 
         {/* Certifications - Inline Style */}
-        <div>
+        {/* Certifications */}
+        <div className="mb-12">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-200">
               <BadgeCheck size={20} className="text-white" />
@@ -137,6 +153,40 @@ const Achievements = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Volunteering */}
+        <div>
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center shadow-lg shadow-rose-200">
+              <Heart size={20} className="text-white" />
+            </div>
+            <h3 className="font-display text-2xl font-bold text-slate-900">Volunteering</h3>
+          </div>
+          {volunteering.map((vol, index) => (
+            <div
+              key={index}
+              className="group relative p-6 bg-white rounded-2xl border border-slate-100 hover:shadow-xl hover:shadow-rose-100/50 transition-all duration-300 overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-rose-50 to-transparent rounded-bl-full opacity-50" />
+              <div className="relative">
+                <div className="flex flex-wrap items-center gap-3 mb-3">
+                  <span className="px-3 py-1 bg-rose-100 text-rose-700 text-xs font-semibold rounded-full">{vol.period}</span>
+                  <span className="px-3 py-1 bg-pink-50 text-pink-600 text-xs font-medium rounded-full">{vol.category}</span>
+                </div>
+                <h4 className="font-display text-lg font-bold text-slate-900 mb-1">{vol.title}</h4>
+                <p className="text-rose-600 font-medium text-sm mb-4">{vol.organization}</p>
+                <ul className="space-y-2">
+                  {vol.achievements.map((achievement, achIndex) => (
+                    <li key={achIndex} className="flex items-start gap-2 text-sm text-slate-600">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-rose-400 to-pink-500 mt-2 flex-shrink-0" />
+                      <span>{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
