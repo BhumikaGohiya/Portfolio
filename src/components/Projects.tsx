@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { ExternalLink, Github, Brain, BarChart3, MessageSquare, FileText, Building2, Users, Shield, Workflow, Download, GraduationCap, Code } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ExternalLink, Github, Brain, BarChart3, MessageSquare, FileText, Building2, Users, Shield, Workflow, Download, GraduationCap, Code, Eye } from "lucide-react";
 
 type ProjectCategory = "academic" | "technical";
 
@@ -8,40 +9,39 @@ const Projects = () => {
 
   const academicProjects = [
     {
+      id: "dlt-hospital-workforce",
       title: "DLT-Driven Hospital Workforce Management",
       description: "Master's Thesis & White Paper",
-      longDescription: "Final thesis for M.Eng in Technology Innovation Management at Carleton University. Explored Distributed Ledger Technology (DLT) to transform hospital hiring and onboarding processes. Delivered a strategic white paper for ConsideraCare with blockchain-based solutions for credential verification and smart contract automation.",
-      technologies: ["DLT/Blockchain", "Activity Theory", "Healthcare", "Text Analytics", "Research"],
+      longDescription: "Analyzed Ontario community hospital hiring inefficiencies using Activity Theory. Delivered a 140+ page thesis and strategic white paper for ConsideraCare with DLT integration roadmap.",
+      technologies: ["DLT/Blockchain", "Activity Theory", "ChatGPT", "Text Analytics", "Research"],
       icon: Building2,
       color: "from-cyan-500 to-blue-600",
       bgColor: "bg-cyan-50",
       pdfLink: "/documents/DLT-Hospital-Workforce-Management-Thesis.pdf",
       whitePaperLink: "/documents/ConsideraCare-DLT-White-Paper.pdf",
-      highlights: [
-        "Blockchain for secure credential verification",
-        "Smart contracts for automated onboarding",
-        "Industry partnership with ConsideraCare",
-      ],
+      scope: "Ontario community hospitals",
+      magnitude: "50+ sources, 8+ personas, 140+ pages",
+      impact: "Strategic DLT implementation roadmap for healthcare HR",
     },
     {
+      id: "ai-sentiment-analysis",
       title: "AI Art Sentiment Analysis",
       description: "Data Analytics Project",
-      longDescription: "Built a sentiment analysis pipeline analyzing thousands of YouTube comments to understand public perception of AI-generated art. Applied NLP techniques including text preprocessing, sentiment classification, and data visualization.",
-      technologies: ["Python", "NLP", "Sentiment Analysis", "YouTube API", "Data Visualization"],
+      longDescription: "Built an NLP pipeline analyzing 1000+ YouTube comments to understand public perception of AI-generated art with sentiment classification and visual insights.",
+      technologies: ["Python", "NLP", "Sentiment Analysis", "YouTube API", "Pandas"],
       icon: Brain,
       color: "from-violet-500 to-purple-600",
       bgColor: "bg-violet-50",
       github: "https://github.com/BhumikaGohiya/AI-Art-Sentiment-Analysis",
-      highlights: [
-        "Analyzed 1000+ YouTube comments",
-        "NLP-based sentiment classification",
-        "Visual insights dashboard",
-      ],
+      scope: "YouTube comment analysis",
+      magnitude: "1000+ comments, 15+ videos",
+      impact: "Data-driven insights on AI art perception",
     },
   ];
 
   const technicalProjects = [
     {
+      id: undefined as string | undefined,
       title: "Coming Soon: API Test Automation Framework",
       description: "Technical Project",
       longDescription: "A comprehensive REST API testing framework built with Rest Assured, featuring data-driven testing, CI/CD integration with Jenkins, and detailed reporting.",
@@ -52,13 +52,12 @@ const Projects = () => {
       github: undefined as string | undefined,
       pdfLink: undefined as string | undefined,
       whitePaperLink: undefined as string | undefined,
-      highlights: [
-        "Data-driven testing approach",
-        "CI/CD pipeline integration",
-        "Comprehensive test reporting",
-      ],
+      scope: "REST API Testing",
+      magnitude: "Multi-endpoint coverage",
+      impact: "Automated regression testing",
     },
     {
+      id: undefined as string | undefined,
       title: "Coming Soon: Selenium UI Automation Suite",
       description: "Technical Project",
       longDescription: "Page Object Model based UI automation framework using Selenium WebDriver with cross-browser testing capabilities and parallel execution.",
@@ -69,11 +68,9 @@ const Projects = () => {
       github: undefined as string | undefined,
       pdfLink: undefined as string | undefined,
       whitePaperLink: undefined as string | undefined,
-      highlights: [
-        "Page Object Model architecture",
-        "Cross-browser testing",
-        "BDD with Cucumber",
-      ],
+      scope: "UI Automation",
+      magnitude: "Cross-browser, parallel execution",
+      impact: "Reduced manual testing effort",
     },
   ];
 
@@ -150,14 +147,20 @@ const Projects = () => {
                   {project.longDescription}
                 </p>
 
-                {/* Highlights */}
+                {/* Scope, Magnitude, Impact */}
                 <div className="space-y-2 mb-5">
-                  {project.highlights.map((highlight, i) => (
-                    <div key={i} className="flex items-center gap-2 text-sm text-slate-700">
-                      <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${project.color}`} />
-                      {highlight}
-                    </div>
-                  ))}
+                  <div className="flex items-start gap-2 text-sm text-slate-700">
+                    <span className="font-semibold text-violet-600 min-w-[70px]">Scope:</span>
+                    <span>{project.scope}</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-sm text-slate-700">
+                    <span className="font-semibold text-cyan-600 min-w-[70px]">Magnitude:</span>
+                    <span>{project.magnitude}</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-sm text-slate-700">
+                    <span className="font-semibold text-emerald-600 min-w-[70px]">Impact:</span>
+                    <span>{project.impact}</span>
+                  </div>
                 </div>
 
                 {/* Technologies */}
@@ -179,12 +182,21 @@ const Projects = () => {
 
                 {/* Action Buttons */}
                 <div className="flex flex-wrap gap-2">
+                  {project.id && (
+                    <Link
+                      to={`/project/${project.id}`}
+                      className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${project.color} text-white font-medium text-sm rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300`}
+                    >
+                      <Eye size={16} />
+                      View Details
+                    </Link>
+                  )}
                   {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${project.color} text-white font-medium text-sm rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300`}
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 text-slate-700 font-medium text-sm rounded-full hover:shadow-md transition-all duration-300"
                     >
                       <Github size={16} />
                       View Code
@@ -195,21 +207,10 @@ const Projects = () => {
                       href={project.pdfLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${project.color} text-white font-medium text-sm rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300`}
-                    >
-                      <Download size={16} />
-                      Thesis PDF
-                    </a>
-                  )}
-                  {project.whitePaperLink && (
-                    <a
-                      href={project.whitePaperLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 text-slate-700 font-medium text-sm rounded-full hover:shadow-md transition-all duration-300"
                     >
-                      <FileText size={16} />
-                      White Paper
+                      <Download size={16} />
+                      PDF
                     </a>
                   )}
                 </div>
