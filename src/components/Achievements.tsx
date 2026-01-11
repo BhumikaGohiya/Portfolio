@@ -1,4 +1,4 @@
-import { GraduationCap, Trophy, Award, Star, TrendingUp, Users, BadgeCheck } from "lucide-react";
+import { GraduationCap, Trophy, Star, TrendingUp, Users, BadgeCheck } from "lucide-react";
 
 const Achievements = () => {
   const awards = [
@@ -13,12 +13,6 @@ const Achievements = () => {
       organization: "Accenture",
       year: "2021",
       icon: Star,
-    },
-    {
-      title: "Ace Award",
-      organization: "Accenture",
-      year: "2020",
-      icon: Award,
     },
     {
       title: "Adroit Award",
