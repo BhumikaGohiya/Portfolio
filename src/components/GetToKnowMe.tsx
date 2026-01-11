@@ -95,13 +95,13 @@ const GetToKnowMe = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-violet-500 to-cyan-500 text-white text-sm font-medium rounded-full mb-4">
-            Expertise & Services
+            Skills & Expertise
           </span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            What I Bring to the Table
+            Crafting Quality at Scale
           </h2>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-            4+ years of building robust automation frameworks that transform QA from a bottleneck into a competitive advantage
+            From manual testing to fully automated pipelines — I engineer testing solutions that catch bugs before they catch you
           </p>
         </div>
 
