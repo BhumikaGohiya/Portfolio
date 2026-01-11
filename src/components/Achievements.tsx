@@ -6,36 +6,41 @@ const Achievements = () => {
       title: "Best Team Pinnacle Award",
       organization: "Accenture",
       year: "2022",
-      description: "Recognition for team collaboration and seamless integration of automation tools, reducing testing time by 2 days per release cycle.",
       icon: Trophy,
+      color: "from-amber-400 to-orange-500",
+      bgColor: "bg-amber-50",
     },
     {
       title: "Stellar Performance Award",
       organization: "Accenture",
       year: "2021",
-      description: "Ranked in the top 5 employees out of a 40-member team.",
       icon: Star,
+      color: "from-purple-400 to-pink-500",
+      bgColor: "bg-purple-50",
     },
     {
       title: "Ace Award",
       organization: "Accenture",
       year: "2020",
-      description: "Top performer generating five high-impact test automation solutions per month.",
       icon: Award,
+      color: "from-blue-400 to-cyan-500",
+      bgColor: "bg-blue-50",
     },
     {
       title: "Adroit Award",
       organization: "Accenture",
       year: "2019",
-      description: "Ranked in the top 10% of associates for exceptional performance.",
       icon: TrendingUp,
+      color: "from-green-400 to-emerald-500",
+      bgColor: "bg-green-50",
     },
     {
       title: "Youth Leadership Program",
       organization: "Mindtrust × TiE Ottawa",
       year: "2023",
-      description: "Specialized leadership training, fostering connections with 50+ industry experts.",
       icon: Users,
+      color: "from-rose-400 to-red-500",
+      bgColor: "bg-rose-50",
     },
   ];
 
@@ -55,18 +60,18 @@ const Achievements = () => {
   ];
 
   const certifications = [
-    { name: "Microsoft Azure Fundamentals (AZ-900)", status: "completed" },
-    { name: "ISTQB – Foundation Level", status: "in-progress" },
+    { name: "Microsoft Azure Fundamentals (AZ-900)", year: "2020" },
+    { name: "ISTQB – Foundation Level", year: "In Progress" },
   ];
 
   return (
-    <section id="achievements" className="section-padding bg-secondary/20">
+    <section id="achievements" className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-gradient-to-b from-slate-50 to-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Credentials & Recognition
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-slate-600 text-lg">
             Academic foundation and professional achievements
           </p>
         </div>
@@ -75,21 +80,23 @@ const Achievements = () => {
           {/* Education Column */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <GraduationCap size={24} className="text-primary" />
-              <h3 className="font-display text-xl font-semibold">Education</h3>
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center">
+                <GraduationCap size={20} className="text-white" />
+              </div>
+              <h3 className="font-display text-xl font-semibold text-slate-900">Education</h3>
             </div>
             <div className="space-y-4">
               {education.map((edu, index) => (
                 <div
                   key={index}
-                  className="p-5 bg-card rounded-xl border border-border hover:border-primary/30 transition-colors"
+                  className="p-5 bg-white rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-lg hover:shadow-indigo-100 transition-all duration-300"
                 >
                   <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-display font-semibold">{edu.degree}</h4>
-                    <span className="text-primary text-sm font-medium">{edu.year}</span>
+                    <h4 className="font-display font-semibold text-slate-900">{edu.degree}</h4>
+                    <span className="text-indigo-600 text-sm font-semibold bg-indigo-50 px-2 py-1 rounded-lg">{edu.year}</span>
                   </div>
-                  <p className="text-muted-foreground text-sm mb-1">{edu.field}</p>
-                  <p className="text-muted-foreground text-sm">{edu.school}</p>
+                  <p className="text-slate-600 text-sm mb-1">{edu.field}</p>
+                  <p className="text-slate-500 text-sm">{edu.school}</p>
                 </div>
               ))}
             </div>
@@ -98,31 +105,25 @@ const Achievements = () => {
           {/* Awards Column */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <Trophy size={24} className="text-primary" />
-              <h3 className="font-display text-xl font-semibold">Awards</h3>
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+                <Trophy size={20} className="text-white" />
+              </div>
+              <h3 className="font-display text-xl font-semibold text-slate-900">Awards</h3>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {awards.map((award, index) => {
                 const IconComponent = award.icon;
                 return (
                   <div
                     key={index}
-                    className="p-5 bg-card rounded-xl border border-border hover:border-primary/30 transition-colors"
+                    className="p-4 bg-white rounded-2xl border border-slate-200 hover:shadow-lg transition-all duration-300 flex items-center gap-4 group"
                   >
-                    <div className="flex gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <IconComponent size={18} className="text-primary" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-1">
-                          <h4 className="font-display font-semibold text-sm">{award.title}</h4>
-                          <span className="text-xs text-muted-foreground">{award.year}</span>
-                        </div>
-                        <p className="text-primary text-sm mb-2">{award.organization}</p>
-                        <p className="text-muted-foreground text-xs leading-relaxed">
-                          {award.description}
-                        </p>
-                      </div>
+                    <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${award.color} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
+                      <IconComponent size={18} className="text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-display font-semibold text-slate-900 text-sm">{award.title}</h4>
+                      <p className="text-slate-500 text-xs">{award.organization} · {award.year}</p>
                     </div>
                   </div>
                 );
@@ -133,19 +134,22 @@ const Achievements = () => {
           {/* Certifications Column */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <Star size={24} className="text-primary" />
-              <h3 className="font-display text-xl font-semibold">Certifications</h3>
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center">
+                <Star size={20} className="text-white" />
+              </div>
+              <h3 className="font-display text-xl font-semibold text-slate-900">Certifications</h3>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {certifications.map((cert, index) => (
                 <div
                   key={index}
-                  className="p-5 bg-card rounded-xl border border-border hover:border-primary/30 transition-colors flex items-center gap-4"
+                  className="p-4 bg-white rounded-2xl border border-slate-200 hover:border-emerald-300 hover:shadow-lg hover:shadow-emerald-50 transition-all duration-300 flex items-center gap-4"
                 >
-                  <div className={`w-2 h-2 rounded-full flex-shrink-0 ${
-                    cert.status === 'completed' ? 'bg-green-500' : 'bg-amber-500'
-                  }`} />
-                  <p className="font-medium text-sm">{cert.name}</p>
+                  <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-slate-900 text-sm">{cert.name}</p>
+                    <p className="text-slate-500 text-xs">{cert.year}</p>
+                  </div>
                 </div>
               ))}
             </div>
