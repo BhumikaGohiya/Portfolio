@@ -64,18 +64,22 @@ const Contact = () => {
     setIsSubmitting(true);
     
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise(resolve => setTimeout(resolve, 500));
     
-    // Open LinkedIn DMs
-    window.open("https://www.linkedin.com/messaging/compose/?recipient=bhumika-gohiya", "_blank");
+    // Open email client with form data
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(
+      `Hi Bhumika,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}\n\n---\nSent from your portfolio website`
+    );
+    window.location.href = `mailto:bhumikagohiya96@gmail.com?subject=${subject}&body=${body}`;
     
     setIsSubmitting(false);
     setIsSubmitted(true);
     setFormData({ name: "", email: "", subject: "", message: "" });
     
     toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
+      title: "Opening email client...",
+      description: "Your message is ready to send via email.",
     });
     
     setTimeout(() => setIsSubmitted(false), 5000);

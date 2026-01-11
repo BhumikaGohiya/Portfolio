@@ -172,9 +172,9 @@ const GetToKnowMe = () => {
             
             <div className="grid md:grid-cols-3 gap-6 relative">
               {timeline.map((item, index) => (
-                <div key={index} className="relative group">
+                <div key={index} className="relative group h-full">
                   {/* Card */}
-                  <div className="bg-white rounded-3xl p-6 border border-slate-100 hover:shadow-2xl hover:border-transparent transition-all duration-300 relative overflow-hidden">
+                  <div className="bg-white rounded-3xl p-6 border border-slate-100 hover:shadow-2xl hover:border-transparent transition-all duration-300 relative overflow-hidden h-full flex flex-col">
                     {/* Background gradient on hover */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
                     
@@ -182,24 +182,24 @@ const GetToKnowMe = () => {
                     <div className="hidden md:flex absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-white border-4 border-slate-200 group-hover:border-violet-400 transition-colors z-10" />
                     
                     {/* Icon */}
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg`}>
-                      <item.icon size={28} className="text-white" />
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg`}>
+                      <item.icon size={24} className="text-white" />
                     </div>
                     
                     {/* Period Badge */}
-                    <span className={`inline-block px-3 py-1 bg-gradient-to-r ${item.color} text-white text-xs font-semibold rounded-full mb-3`}>
+                    <span className={`inline-block px-3 py-1 bg-gradient-to-r ${item.color} text-white text-xs font-semibold rounded-full mb-3 w-fit`}>
                       {item.period}
                     </span>
                     
                     {/* Title */}
-                    <h4 className="font-display text-xl font-bold text-slate-900 mb-1">{item.title}</h4>
-                    <p className="text-slate-500 text-sm mb-4">{item.role}</p>
+                    <h4 className="font-display text-lg font-bold text-slate-900 mb-1">{item.title}</h4>
+                    <p className="text-slate-500 text-sm mb-4 flex-grow">{item.role}</p>
                     
                     {/* Achievement Metrics */}
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-2 gap-2 mt-auto">
                       {item.achievements.map((achievement, i) => (
-                        <div key={i} className="bg-slate-50 rounded-xl p-3 text-center group-hover:bg-slate-100 transition-colors">
-                          <p className={`font-display text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
+                        <div key={i} className="bg-slate-50 rounded-xl p-2.5 text-center group-hover:bg-slate-100 transition-colors">
+                          <p className={`font-display text-base font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
                             {achievement.value}
                           </p>
                           <p className="text-slate-500 text-xs">{achievement.label}</p>
