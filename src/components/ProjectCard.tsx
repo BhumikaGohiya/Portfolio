@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { Github } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -6,9 +6,10 @@ interface ProjectCardProps {
   description: string;
   image: string;
   index: number;
+  github?: string;
 }
 
-const ProjectCard = ({ title, category, description, image, index }: ProjectCardProps) => {
+const ProjectCard = ({ title, category, description, image, index, github }: ProjectCardProps) => {
   return (
     <div 
       className="group hover-lift bg-card rounded-2xl overflow-hidden border border-border"
@@ -27,12 +28,16 @@ const ProjectCard = ({ title, category, description, image, index }: ProjectCard
           {title}
         </h3>
         <p className="text-muted-foreground text-sm mb-4">{description}</p>
-        <a
-          href="#"
-          className="inline-flex items-center gap-1 text-sm font-medium text-foreground hover:text-primary transition-colors"
-        >
-          View details <ArrowUpRight size={16} />
-        </a>
+        {github && (
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
+          >
+            <Github size={18} /> View on GitHub
+          </a>
+        )}
       </div>
     </div>
   );
