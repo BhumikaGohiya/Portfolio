@@ -75,7 +75,7 @@ const Hero = () => {
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-violet-200 hover:scale-105 transition-all duration-300"
               >
                 <Search size={20} />
-                Explore My Work
+                View My Projects
               </a>
               <a
                 href="/documents/Bhumika_Gohiya_Resume.pdf"
