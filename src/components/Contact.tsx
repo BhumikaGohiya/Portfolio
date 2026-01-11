@@ -120,14 +120,14 @@ const Contact = () => {
             Get In Touch
           </span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4">
-            Let's Build Secure, Scalable
+            Let's Build Reliable,
             <br />
             <span className="bg-gradient-to-r from-violet-600 to-cyan-600 bg-clip-text text-transparent">
-              Products Together
+              Data-Driven Systems
             </span>
           </h2>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-            Whether you need a QA engineer, test automation architect, or SDET — I'd love to hear about your project.
+            Passionate about BFSI, fintech, and enterprise systems — I thrive on data-driven decisions and scalable quality solutions. Looking for a QA Engineer, SDET, or automation specialist? Let's connect!
           </p>
         </div>
 
@@ -288,7 +288,7 @@ const Contact = () => {
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Tell me about your project…"
+                      placeholder="How can I contribute to your project? Share an opportunity or describe how we could work together..."
                       className={`w-full px-4 py-3.5 rounded-xl border ${errors.message ? 'border-red-300 bg-red-50' : 'border-slate-200 bg-white/50'} focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all resize-none placeholder:text-slate-400`}
                     />
                     {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
