@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import profileImage from "@/assets/profile.jpeg";
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -18,7 +19,13 @@ const Navigation = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-6 flex items-center justify-between">
-        {/* Profile image placeholder - will be added when user uploads photo */}
+        <a href="#" className="flex items-center">
+          <img 
+            src={profileImage} 
+            alt="Bhumika Gohiya" 
+            className="w-10 h-10 rounded-full object-cover border-2 border-primary"
+          />
+        </a>
         <div className="hidden md:flex items-center gap-8">
           <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
             About
