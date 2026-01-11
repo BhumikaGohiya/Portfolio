@@ -117,27 +117,27 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-8">
+        <div className="grid lg:grid-cols-5 gap-8 items-stretch">
           {/* Left Column - Contact Info & Highlights */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 flex flex-col gap-4">
             {/* Contact Card */}
-            <div className="bg-white/70 backdrop-blur-xl rounded-3xl p-8 border border-white/50 shadow-xl shadow-violet-100/20 hover:shadow-2xl transition-shadow duration-300">
-              <h3 className="font-display text-xl font-bold text-slate-900 mb-6">Contact Information</h3>
+            <div className="bg-white/70 backdrop-blur-xl rounded-3xl p-6 border border-white/50 shadow-xl shadow-violet-100/20 hover:shadow-2xl transition-shadow duration-300">
+              <h3 className="font-display text-lg font-bold text-slate-900 mb-4">Contact Information</h3>
               
-              <div className="space-y-4 mb-8">
+              <div className="space-y-3 mb-4">
                 {contactInfo.map((item, index) => (
-                  <div key={index} className="group flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-violet-100 to-cyan-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <item.icon size={20} className="text-violet-600" />
+                  <div key={index} className="group flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-100 to-cyan-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <item.icon size={18} className="text-violet-600" />
                     </div>
                     <div>
                       <p className="text-xs text-slate-400 uppercase tracking-wider">{item.label}</p>
                       {item.href ? (
-                        <a href={item.href} className="text-slate-700 font-medium hover:text-violet-600 transition-colors">
+                        <a href={item.href} className="text-slate-700 font-medium text-sm hover:text-violet-600 transition-colors">
                           {item.value}
                         </a>
                       ) : (
-                        <p className="text-slate-700 font-medium">{item.value}</p>
+                        <p className="text-slate-700 font-medium text-sm">{item.value}</p>
                       )}
                     </div>
                   </div>
@@ -145,47 +145,46 @@ const Contact = () => {
               </div>
 
               {/* Social Links */}
-              <div className="flex gap-3 mb-8">
+              <div className="flex gap-2">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group w-12 h-12 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-50 flex items-center justify-center hover:from-violet-500 hover:to-cyan-500 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-violet-200"
+                    className="group w-10 h-10 rounded-xl bg-gradient-to-br from-slate-100 to-slate-50 flex items-center justify-center hover:from-violet-500 hover:to-cyan-500 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-violet-200"
                     aria-label={social.label}
                   >
-                    <social.icon size={20} className="text-slate-600 group-hover:text-white transition-colors" />
+                    <social.icon size={18} className="text-slate-600 group-hover:text-white transition-colors" />
                   </a>
                 ))}
               </div>
             </div>
 
             {/* Let's Chat Card */}
-            <div className="bg-gradient-to-br from-amber-500 to-orange-500 rounded-3xl p-8 text-white shadow-xl shadow-amber-200/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center">
-                  <Coffee size={24} className="text-white" />
+            <div className="bg-gradient-to-br from-amber-500 to-orange-500 rounded-3xl p-6 text-white shadow-xl shadow-amber-200/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex-1 flex flex-col">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                  <Coffee size={20} className="text-white" />
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-bold">Let's Chat!</h3>
-                  <p className="text-white/80 text-sm">Book a virtual coffee with me</p>
+                  <h3 className="font-display text-lg font-bold">Let's Chat!</h3>
+                  <p className="text-white/80 text-xs">Book a virtual coffee with me</p>
                 </div>
               </div>
-              <p className="text-white/90 mb-6 text-sm leading-relaxed">
-                Prefer a quick conversation? Schedule a 15-min coffee chat to discuss opportunities, collaborations, or just to connect!
+              <p className="text-white/90 mb-4 text-sm leading-relaxed flex-grow">
+                Prefer a quick conversation? Schedule a 15-min coffee chat to discuss opportunities or collaborations!
               </p>
               <a
                 href="https://calendly.com/bhumikagohiya96/coffee-chat-with-bhumika?month=2026-01"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-amber-600 font-semibold rounded-xl hover:bg-amber-50 transition-colors w-full justify-center"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-amber-600 font-semibold rounded-xl hover:bg-amber-50 transition-colors w-full justify-center text-sm"
               >
-                <Calendar size={20} />
+                <Calendar size={18} />
                 Book Coffee Chat
               </a>
             </div>
-
           </div>
 
           {/* Right Column - Contact Form */}
