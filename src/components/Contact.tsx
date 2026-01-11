@@ -33,7 +33,7 @@ const Contact = () => {
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                   <MapPin size={18} className="text-primary" />
                 </div>
-                <span className="text-slate-700">North York, Ontario, Canada</span>
+                <span className="text-slate-700">Toronto, Ontario, Canada</span>
               </div>
             </div>
           </div>

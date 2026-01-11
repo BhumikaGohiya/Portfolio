@@ -20,7 +20,7 @@ const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-4 flex items-center justify-between">
         <a href="#" className="flex items-center group">
-          <div className="relative w-10 h-10 rounded-full p-[2px] bg-gradient-to-tr from-primary via-blue-400 to-cyan-400 group-hover:scale-105 transition-transform duration-300">
+          <div className="relative w-10 h-10 rounded-full p-[2px] bg-gradient-to-tr from-violet-500 via-purple-500 to-cyan-400 group-hover:scale-105 transition-transform duration-300">
             <img 
               src={profileImage} 
               alt="Bhumika Gohiya" 

@@ -9,7 +9,7 @@ const Hero = () => {
           {/* Profile Image */}
           <div className="animate-fade-up flex-shrink-0">
             <div className="relative">
-              <div className="w-56 h-56 md:w-72 md:h-72 rounded-full bg-gradient-to-br from-slate-200 to-slate-300 p-1">
+              <div className="w-56 h-56 md:w-72 md:h-72 rounded-full bg-gradient-to-br from-violet-200 via-purple-100 to-cyan-100 p-1.5">
                 <img
                   src={profileImage}
                   alt="Bhumika Gohiya"
@@ -17,8 +17,8 @@ const Hero = () => {
                 />
               </div>
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-lg border border-slate-200">
-                <MapPin size={16} className="text-red-500" />
-                <span className="text-sm font-medium text-slate-700">Ottawa, Canada</span>
+                <MapPin size={16} className="text-rose-500" />
+                <span className="text-sm font-medium text-slate-700">Toronto, Canada</span>
               </div>
             </div>
           </div>
