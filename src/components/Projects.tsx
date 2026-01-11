@@ -1,10 +1,40 @@
-import { ExternalLink, Github, Brain, BarChart3, MessageSquare } from "lucide-react";
+import { ExternalLink, Github, Brain, BarChart3, MessageSquare, FileText, Building2, Users, Shield, Workflow, Download } from "lucide-react";
 
 const Projects = () => {
   const projects = [
     {
+      title: "DLT-Driven Hospital Workforce Management",
+      description: "Master's Thesis Project",
+      longDescription: "Final thesis for M.Eng in Technology Innovation Management at Carleton University. Explored integrating Distributed Ledger Technology (DLT) to transform hiring and onboarding in Ontario community hospitals, using Activity Theory framework to identify inefficiencies and propose blockchain-based solutions.",
+      technologies: ["Distributed Ledger Technology", "Activity Theory", "Healthcare", "Research", "Text Analytics"],
+      icon: Building2,
+      color: "from-cyan-500 to-blue-600",
+      bgColor: "bg-cyan-50",
+      pdfLink: "/documents/DLT-Hospital-Workforce-Management-Thesis.pdf",
+      highlights: [
+        { icon: Shield, text: "Blockchain for Credential Verification" },
+        { icon: Workflow, text: "Smart Contracts for Automation" },
+        { icon: Users, text: "Workforce Management Innovation" },
+      ],
+    },
+    {
+      title: "ConsideraCare DLT White Paper",
+      description: "Strategic Industry Deliverable",
+      longDescription: "Strategic white paper developed for ConsideraCare, a senior home care services company. Mapped hiring inefficiencies against DLT applications, providing actionable recommendations for implementing blockchain technology to streamline caregiver recruitment and onboarding processes.",
+      technologies: ["White Paper", "DLT Strategy", "Healthcare Innovation", "Process Optimization"],
+      icon: FileText,
+      color: "from-emerald-500 to-teal-600",
+      bgColor: "bg-emerald-50",
+      pdfLink: "/documents/ConsideraCare-DLT-White-Paper.pdf",
+      highlights: [
+        { icon: Building2, text: "Industry Partnership" },
+        { icon: Shield, text: "Secure Data Management" },
+        { icon: Workflow, text: "Operational Efficiency" },
+      ],
+    },
+    {
       title: "AI Art Sentiment Analysis",
-      description: "Master's capstone project analyzing public perception of AI-generated art through YouTube comments.",
+      description: "Data Analytics Project",
       longDescription: "Developed as part of my Master of Engineering in Technology Innovation Management (Data Analytics concentration) at Carleton University. Built a comprehensive sentiment analysis pipeline to analyze thousands of YouTube comments, extracting insights about how people perceive AI-generated artwork using NLP techniques and data visualization.",
       technologies: ["Python", "NLP", "Sentiment Analysis", "YouTube API", "Data Visualization"],
       icon: Brain,
@@ -54,6 +84,10 @@ const Projects = () => {
                       <project.icon size={28} className="text-white" />
                     </div>
                     
+                    <span className={`inline-block px-3 py-1 bg-gradient-to-r ${project.color} text-white text-xs font-semibold rounded-full mb-3`}>
+                      {project.description}
+                    </span>
+                    
                     <h3 className="font-display text-2xl md:text-3xl font-bold text-slate-900 mb-4">
                       {project.title}
                     </h3>
@@ -74,17 +108,32 @@ const Projects = () => {
                       ))}
                     </div>
 
-                    {/* Action Button */}
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${project.color} text-white font-medium rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300`}
-                    >
-                      <Github size={20} />
-                      View on GitHub
-                      <ExternalLink size={16} />
-                    </a>
+                    {/* Action Buttons */}
+                    <div className="flex flex-wrap gap-3">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${project.color} text-white font-medium rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300`}
+                        >
+                          <Github size={20} />
+                          View on GitHub
+                          <ExternalLink size={16} />
+                        </a>
+                      )}
+                      {project.pdfLink && (
+                        <a
+                          href={project.pdfLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${project.color} text-white font-medium rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300`}
+                        >
+                          <Download size={20} />
+                          Download PDF
+                        </a>
+                      )}
+                    </div>
                   </div>
 
                   {/* Highlights Card */}
