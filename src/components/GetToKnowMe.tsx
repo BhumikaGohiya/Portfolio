@@ -101,7 +101,7 @@ const GetToKnowMe = () => {
             Crafting Quality at Scale
           </h2>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-            From manual testing to fully automated pipelines — I engineer testing solutions that catch bugs before they catch you
+            4+ years of automation expertise, evolving from building test frameworks to leading teams and owning quality strategies end-to-end
           </p>
         </div>
 
