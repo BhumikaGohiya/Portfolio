@@ -113,18 +113,18 @@ const GetToKnowMe = () => {
           </p>
         </div>
 
-        {/* Stats Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+        {/* Stats Row - All 5 in one line */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-16">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="group relative p-6 bg-white rounded-2xl border border-slate-100 text-center overflow-hidden hover:shadow-xl transition-all duration-300"
+              className="group relative p-5 bg-white rounded-2xl border border-slate-100 text-center overflow-hidden hover:shadow-xl transition-all duration-300"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
-              <p className={`font-display text-3xl md:text-4xl font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}>
+              <p className={`font-display text-2xl md:text-3xl font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}>
                 {stat.value}
               </p>
-              <p className="text-slate-500 text-sm mt-1 font-medium">{stat.label}</p>
+              <p className="text-slate-500 text-xs mt-1 font-medium">{stat.label}</p>
             </div>
           ))}
         </div>
