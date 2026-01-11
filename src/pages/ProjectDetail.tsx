@@ -87,7 +87,7 @@ const projectsData: Record<string, ProjectData> = {
       "DLT can provide immutable credential storage reducing verification time by up to 70%",
       "Smart contracts can automate compliance checks and onboarding task sequences",
     ],
-    technologies: ["DLT/Blockchain", "Activity Theory", "ChatGPT", "Text Analytics", "Qualitative Research", "Persona Development", "Process Modeling"],
+    technologies: ["DLT/Blockchain", "Activity Theory", "ChatGPT", "Prompt Engineering", "Text Analytics", "Qualitative Research", "Persona Development", "Process Modeling"],
     stats: [
       { label: "Literature Sources", value: "50+" },
       { label: "Personas Developed", value: "8+" },

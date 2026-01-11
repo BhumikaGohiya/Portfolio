@@ -13,7 +13,7 @@ const Projects = () => {
       title: "DLT-Driven Hospital Workforce Management",
       description: "Master's Thesis & White Paper",
       longDescription: "Analyzed Ontario community hospital hiring inefficiencies using Activity Theory. Delivered a 140+ page thesis and strategic white paper for ConsideraCare with DLT integration roadmap.",
-      technologies: ["DLT/Blockchain", "Activity Theory", "ChatGPT", "Text Analytics", "Research"],
+      technologies: ["DLT/Blockchain", "Activity Theory", "ChatGPT", "Prompt Engineering", "Research"],
       icon: Building2,
       color: "from-cyan-500 to-blue-600",
       bgColor: "bg-cyan-50",
