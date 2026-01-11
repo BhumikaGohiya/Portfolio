@@ -1,17 +1,14 @@
 import { GraduationCap, Trophy, Star, TrendingUp, Users, BadgeCheck, Heart, Award, ExternalLink } from "lucide-react";
 
 const Achievements = () => {
-  const nominations = [
+  const awards = [
     {
-      title: "2025 TIM Project Impact Awards Nomination",
+      title: "TIM Project Impact Awards Nomination",
       organization: "Carleton University",
       year: "2025",
-      description: "Presented a project exploring how to reimagine healthcare hiring through blockchain, AI personas, and systems thinking — aiming to reduce inefficiencies in one of our most critical sectors.",
+      icon: Award,
       linkedinUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7324266995682611201/",
     },
-  ];
-
-  const awards = [
     {
       title: "Best Team Pinnacle Award",
       organization: "Accenture",
@@ -113,41 +110,6 @@ const Achievements = () => {
           </div>
         </div>
 
-        {/* Nominations - Featured Card */}
-        <div className="mb-12">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center shadow-lg shadow-indigo-200">
-              <Award size={20} className="text-white" />
-            </div>
-            <h3 className="font-display text-2xl font-bold text-slate-900">Award Nominations</h3>
-          </div>
-          {nominations.map((nomination, index) => (
-            <div
-              key={index}
-              className="group relative p-6 bg-gradient-to-br from-indigo-50 via-white to-blue-50 rounded-2xl border border-indigo-100 hover:shadow-xl hover:shadow-indigo-100/50 transition-all duration-300 overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-indigo-100 to-transparent rounded-bl-full opacity-50" />
-              <div className="relative">
-                <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-semibold rounded-full">{nomination.year}</span>
-                  <span className="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-medium rounded-full">{nomination.organization}</span>
-                </div>
-                <h4 className="font-display text-lg font-bold text-slate-900 mb-2">{nomination.title}</h4>
-                <p className="text-slate-600 text-sm mb-4 leading-relaxed">{nomination.description}</p>
-                <a
-                  href={nomination.linkedinUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-500 to-blue-600 text-white text-sm font-medium rounded-full hover:from-indigo-600 hover:to-blue-700 transition-all duration-300 shadow-md hover:shadow-lg"
-                >
-                  <span>View on LinkedIn</span>
-                  <ExternalLink size={14} />
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-
         {/* Awards - Compact Grid */}
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-6">
@@ -168,7 +130,20 @@ const Achievements = () => {
                     <IconComponent size={20} className="text-amber-600" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-semibold text-slate-900 text-sm truncate">{award.title}</h4>
+                    <div className="flex items-center gap-2">
+                      <h4 className="font-semibold text-slate-900 text-sm truncate">{award.title}</h4>
+                      {award.linkedinUrl && (
+                        <a
+                          href={award.linkedinUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-amber-600 hover:text-amber-700 transition-colors flex-shrink-0"
+                          title="View on LinkedIn"
+                        >
+                          <ExternalLink size={14} />
+                        </a>
+                      )}
+                    </div>
                     <p className="text-xs text-slate-500">{award.organization} · {award.year}</p>
                   </div>
                 </div>
