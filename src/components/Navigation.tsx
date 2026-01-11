@@ -19,12 +19,14 @@ const Navigation = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-6 flex items-center justify-between">
-        <a href="#" className="flex items-center">
-          <img 
-            src={profileImage} 
-            alt="Bhumika Gohiya" 
-            className="w-10 h-10 rounded-full object-cover border-2 border-primary"
-          />
+        <a href="#" className="flex items-center group">
+          <div className="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-primary via-orange-400 to-amber-300 group-hover:scale-105 transition-transform duration-300">
+            <img 
+              src={profileImage} 
+              alt="Bhumika Gohiya" 
+              className="w-full h-full rounded-full object-cover border-2 border-background"
+            />
+          </div>
         </a>
         <div className="hidden md:flex items-center gap-8">
           <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
