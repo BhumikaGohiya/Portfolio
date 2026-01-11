@@ -15,36 +15,36 @@ const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : ""
+        scrolled ? "bg-white/80 backdrop-blur-lg border-b border-slate-200 shadow-sm" : ""
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-4 flex items-center justify-between">
         <a href="#" className="flex items-center group">
-          <div className="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-primary via-orange-400 to-amber-300 group-hover:scale-105 transition-transform duration-300">
+          <div className="relative w-10 h-10 rounded-full p-[2px] bg-gradient-to-tr from-primary via-blue-400 to-cyan-400 group-hover:scale-105 transition-transform duration-300">
             <img 
               src={profileImage} 
               alt="Bhumika Gohiya" 
-              className="w-full h-full rounded-full object-cover border-2 border-background"
+              className="w-full h-full rounded-full object-cover border-2 border-white"
             />
           </div>
         </a>
-        <div className="hidden md:flex items-center gap-8">
-          <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
+        <div className="hidden md:flex items-center gap-1 bg-white/80 backdrop-blur-sm rounded-full px-2 py-1.5 border border-slate-200">
+          <a href="#about" className="px-4 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all">
             About
           </a>
-          <a href="#work" className="text-muted-foreground hover:text-foreground transition-colors">
-            Work
-          </a>
-          <a href="#experience" className="text-muted-foreground hover:text-foreground transition-colors">
+          <a href="#experience" className="px-4 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all">
             Experience
           </a>
-          <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
+          <a href="#achievements" className="px-4 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all">
+            Credentials
+          </a>
+          <a href="#contact" className="px-4 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all">
             Contact
           </a>
         </div>
         <a
           href="#contact"
-          className="hidden md:inline-flex px-5 py-2.5 bg-primary text-primary-foreground rounded-full font-medium text-sm hover:opacity-90 transition-opacity"
+          className="hidden md:inline-flex px-5 py-2.5 bg-primary text-white rounded-full font-medium text-sm hover:bg-primary/90 transition-colors"
         >
           Get in touch
         </a>

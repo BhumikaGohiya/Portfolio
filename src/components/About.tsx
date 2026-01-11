@@ -7,15 +7,15 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-card">
+    <section id="about" className="section-padding bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <p className="text-primary font-medium mb-4">About me</p>
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-8">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-8 text-slate-900">
               Building quality into every release
             </h2>
-            <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
+            <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
               <p>
                 I'm a QA Automation Engineer with over 4+ years at Accenture, where I automated 
                 500+ UI and API test cases using Selenium and Rest Assured, implementing BDD 
@@ -29,12 +29,12 @@ const About = () => {
             </div>
           </div>
           <div>
-            <h3 className="font-display text-xl font-semibold mb-6">Skills & Technologies</h3>
+            <h3 className="font-display text-xl font-semibold mb-6 text-slate-900">Skills & Technologies</h3>
             <div className="flex flex-wrap gap-3">
               {skills.map((skill) => (
                 <span
                   key={skill}
-                  className="px-4 py-2 bg-secondary rounded-full text-sm font-medium text-foreground"
+                  className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-slate-700 hover:bg-primary hover:text-white transition-colors cursor-default"
                 >
                   {skill}
                 </span>
@@ -42,16 +42,16 @@ const About = () => {
             </div>
             <div className="mt-12 grid grid-cols-3 gap-8">
               <div>
-                <p className="font-display text-4xl font-bold text-gradient">500+</p>
-                <p className="text-muted-foreground mt-1">Test Cases</p>
+                <p className="font-display text-4xl font-bold text-primary">500+</p>
+                <p className="text-slate-500 mt-1">Test Cases</p>
               </div>
               <div>
-                <p className="font-display text-4xl font-bold text-gradient">4+</p>
-                <p className="text-muted-foreground mt-1">Years</p>
+                <p className="font-display text-4xl font-bold text-primary">4+</p>
+                <p className="text-slate-500 mt-1">Years</p>
               </div>
               <div>
-                <p className="font-display text-4xl font-bold text-gradient">85%</p>
-                <p className="text-muted-foreground mt-1">Automation</p>
+                <p className="font-display text-4xl font-bold text-primary">85%</p>
+                <p className="text-slate-500 mt-1">Automation</p>
               </div>
             </div>
           </div>
