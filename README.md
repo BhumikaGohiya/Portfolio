@@ -91,7 +91,7 @@ I'm always open to discussing new opportunities, collaborations, or just having 
   
   📞 **Phone:** +1 (555) 123-4567
   
-  ☕ [**Book a Coffee Chat**](https://calendly.com/bhumikagohiya)
+  ☕ [**Book a Coffee Chat**](https://calendly.com/app/scheduling/meeting_types/user/me)
   
 </div>
 
