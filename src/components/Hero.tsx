@@ -79,8 +79,7 @@ const Hero = () => {
               </a>
               <a
                 href="/documents/Bhumika_Gohiya_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                download="Bhumika_Gohiya_Resume.pdf"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-violet-200 text-violet-700 font-semibold rounded-full hover:border-violet-400 hover:shadow-md transition-all duration-300"
               >
                 <FileText size={20} />
